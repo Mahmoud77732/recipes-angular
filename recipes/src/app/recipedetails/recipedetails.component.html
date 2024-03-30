@@ -1,0 +1,55 @@
+
+
+<div>
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-4">
+      <img src="{{specificItem.photoUrl}}" class="w-100" alt="">
+    </div>
+    <div class="col-md-8">
+      <h2>{{specificItem.title}}</h2>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+              <b>Decription:</b>
+            </button>
+          </h2>
+          <div id="flush-collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">{{specificItem.description}}</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+              <b>Directions:</b>
+            </button>
+          </h2>
+          <div id="flush-collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">{{specificItem.directions}}</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+              <b>Ingredients:</b>
+            </button>
+          </h2>
+          <div id="flush-collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">{{specificItem.ingredients}}</div>
+          </div>
+        </div>
+      </div>
+      <p class="btn btn-danger m-2" *ngFor="let tag of specificItem.tags.split(',')">
+        {{tag}}
+      </p>
+    </div>
+  </div>
+  <div class="text-center row" *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+</div>
+
+
+
+
+
